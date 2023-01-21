@@ -1,0 +1,96 @@
+@use "util" as *;
+
+@include mq(sp) {
+  .cover-card {
+    height: rem(54);
+    width: fit-content;
+    padding-left: rem(16);
+    padding-right: rem(18);
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: flex-end;
+
+    font-size: rem(20);
+    font-weight: bold;
+
+    border-radius: 0 rem(8) rem(8) 0;
+  }
+
+  .card1 {
+    position: absolute;
+    top: rem(326);
+    z-index: 10;
+
+    & > span {
+      padding-bottom: rem(13);
+    }
+  }
+
+  .card2 {
+    position: absolute;
+    top: rem(388);
+    z-index: 10;
+    font-family: "Poppins";
+
+    & > span {
+      padding-bottom: rem(13);
+    }
+  }
+
+  .cover-container {
+    position: relative;
+    width: rem(362);
+    margin-left: auto;
+    &__picture {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cover-container-double {
+    width: 100%;
+    border-radius: 0 0 0 rem(113);
+    overflow: hidden;
+  }
+
+  // カバー内の文字色と強調の文字サイズ
+
+  .green {
+    color: #46c017;
+  }
+
+  .yellow {
+    color: #f2a118;
+  }
+
+  .orange {
+    color: #f26618;
+  }
+
+  strong {
+    font-size: rem(24);
+    vertical-align: bottom;
+  }
+
+  // 2ページ目以降の微修正
+}
+
+// ページネーション
+
+.swiper-pagination {
+  height: 50px;
+}
+
+.swiper-pagination-bullet {
+  display: block;
+  width: rem(8) !important;
+  height: rem(8) !important;
+  background-color: #000 !important;
+  border-radius: 50%;
+  opacity: 0.25;
+
+  &-active {
+    opacity: 1;
+  }
+}

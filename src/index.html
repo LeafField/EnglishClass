@@ -13,6 +13,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;700;800&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -53,7 +55,43 @@
 
   </header>
 
-  <main class="main"></main>
+  <main class="main">
+    <section class="hero">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="cover-container">
+              <div class="cover-container-double">
+                <picture class="cover-container__picture">
+                  <source media="(max-width:767px)" srcset="./images/cover/cover_sp_1.jpg">
+                  <img src="./images/cover/cover_pc_1.jpg" alt="Kira-Kira English">
+                </picture>
+              </div>
+              <div class="cover-card card1"><span class="yellow"><strong>話</strong>せる！</span><span
+                  class="green"><strong>&nbsp;楽</strong>しい！</span></div>
+              <div class="cover-card card2"><span class="orange">Kira-Kira</span><span>&nbsp;English</span></div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="cover-container">
+              <div class="cover-container-double">
+                <picture class="cover-container__picture">
+                  <source media="(max-width:767px)" srcset="./images/cover/cover_sp_2.jpg">
+                  <img src="./images/cover/cover_pc_2.jpg" alt="Kira-Kira English">
+                </picture>
+              </div>
+              <div class="cover-card card1"><span>3日で</span><span class="yellow"><strong>完結！</strong></span></div>
+              <div class="cover-card card2"><span class="orange">Kira-Kira</span><span>&nbsp;English</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </section>
+  </main>
+
   <footer class="footer"></footer>
 </body>
 
