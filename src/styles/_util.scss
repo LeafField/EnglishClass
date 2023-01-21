@@ -1,0 +1,14 @@
+$breakpoints: (
+  sp: "screen and (max-width:767px)",
+  pc: "screen and (min-width:768px)",
+);
+
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints,$breakpoint)} {
+    @content;
+  }
+}
+
+@function rem($pixel) {
+  @return calc($pixel / 16 * 1rem);
+}
