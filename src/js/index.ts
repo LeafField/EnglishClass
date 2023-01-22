@@ -2,7 +2,7 @@ import "ress";
 import "../styles/style.scss";
 
 import "swiper/swiper-bundle.min.css";
-import Swiper, { Pagination, EffectFade } from "swiper";
+import Swiper, { Pagination, EffectFade, Autoplay } from "swiper";
 Swiper.use([Pagination, EffectFade]);
 
 // ハンバーガーメニュー周りの実装
@@ -26,9 +26,12 @@ new Swiper(".swiper", {
   fadeEffect: {
     crossFade: true,
   },
-  modules: [Pagination, EffectFade],
+  modules: [Pagination, EffectFade, Autoplay],
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+  },
+  autoplay: {
+    delay: 5000,
   },
 });
