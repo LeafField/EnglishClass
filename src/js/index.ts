@@ -1,3 +1,4 @@
+import "ress";
 import "../styles/style.scss";
 
 import "swiper/swiper-bundle.min.css";
