@@ -1,6 +1,8 @@
 $breakpoints: (
   sp: "screen and (max-width:767px)",
+  sp2: "screen and (max-width:800px)",
   pc: "screen and (min-width:768px)",
+  pc2: "screen and (min-width:800px)",
 );
 
 @mixin mq($breakpoint) {
@@ -11,4 +13,8 @@ $breakpoints: (
 
 @function rem($pixel) {
   @return calc($pixel / 16 * 1rem);
+}
+
+@function vw($pixel) {
+  @return calc($pixel / 1536 * 100vw);
 }

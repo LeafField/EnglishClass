@@ -2,7 +2,7 @@ import "../styles/style.scss";
 
 import "swiper/swiper-bundle.min.css";
 import Swiper, { Pagination, EffectFade, Autoplay } from "swiper";
-Swiper.use([Pagination, EffectFade]);
+Swiper.use([Pagination, EffectFade, Autoplay]);
 
 // ハンバーガーメニュー周りの実装
 const hamburger = <HTMLDivElement>document.querySelector(".hamburger");
