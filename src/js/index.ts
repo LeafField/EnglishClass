@@ -1,4 +1,3 @@
-import "ress";
 import "../styles/style.scss";
 
 import "swiper/swiper-bundle.min.css";
@@ -22,7 +21,6 @@ window.addEventListener("resize", () => {
 // スライダーの実装
 new Swiper(".swiper", {
   effect: "fade",
-  spaceBetween: 30,
   fadeEffect: {
     crossFade: true,
   },

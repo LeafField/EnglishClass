@@ -34,7 +34,6 @@
     position: absolute;
     top: rem(388);
     z-index: 10;
-
     & > span {
       padding-bottom: rem(13);
     }
@@ -115,5 +114,116 @@
 
   &-active {
     opacity: 1;
+  }
+}
+
+// pc版スライダー
+@include mq(pc) {
+  .cover-card {
+    height: rem(85);
+    width: fit-content;
+    padding-left: rem(16);
+    padding-right: rem(24);
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: flex-end;
+
+    font-size: rem(36);
+    font-weight: bold;
+
+    border-radius: 0 rem(8) rem(8) 0;
+
+    & span {
+      display: inline-block;
+    }
+  }
+
+  .card1 {
+    position: absolute;
+    top: rem(430);
+    // left: rem(-118);
+    z-index: 10;
+
+    & > span {
+      padding-bottom: rem(13);
+    }
+  }
+
+  .card2 {
+    position: absolute;
+    top: rem(534);
+    // left: rem(-116);
+
+    z-index: 10;
+
+    & > span {
+      padding-bottom: rem(16);
+    }
+  }
+
+  .cover-container {
+    position: relative;
+    max-width: rem(1393);
+    margin-left: auto;
+    &__picture {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cover-container-double {
+    max-width: rem(1270);
+    margin-left: auto;
+    border-radius: 0 0 0 rem(160);
+    overflow: hidden;
+    position: relative;
+    top: -9px;
+  }
+
+  // カバー内の文字色と強調の文字サイズ
+
+  .green {
+    color: #46c017;
+  }
+
+  .yellow {
+    color: #f2a118;
+  }
+
+  .orange {
+    color: #f26618;
+  }
+
+  strong {
+    font-size: rem(44);
+    // vertical-align: bottom;
+  }
+
+  .Poppins {
+    padding-bottom: rem(18) !important;
+    letter-spacing: 0.01em;
+  }
+
+  // PC版ページネーションの調整
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 0 !important;
+    // left: rem(670) !important;
+    top: rem(755);
+    display: flex;
+    justify-content: flex-end;
+    height: 10px;
+    padding-right: rem(23);
+    padding-top: rem(11);
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0 rem(11) !important;
   }
 }
