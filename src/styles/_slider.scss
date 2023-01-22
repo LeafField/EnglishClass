@@ -2,18 +2,18 @@
 
 @include mq(sp) {
   .cover-card {
-    height: rem(54);
+    height: spvw(54);
     width: fit-content;
-    padding-left: rem(16);
-    padding-right: rem(18);
+    padding-left: spvw(16);
+    padding-right: spvw(18);
     background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: flex-end;
 
-    font-size: rem(20);
+    font-size: spvw(20);
     font-weight: bold;
 
-    border-radius: 0 rem(8) rem(8) 0;
+    border-radius: 0 spvw(8) spvw(8) 0;
 
     & span {
       display: inline-block;
@@ -22,26 +22,26 @@
 
   .card1 {
     position: absolute;
-    top: rem(326);
+    top: spvw(326);
     z-index: 10;
 
     & > span {
-      padding-bottom: rem(13);
+      padding-bottom: spvw(13);
     }
   }
 
   .card2 {
     position: absolute;
-    top: rem(388);
+    top: spvw(388);
     z-index: 10;
     & > span {
-      padding-bottom: rem(13);
+      padding-bottom: spvw(13);
     }
   }
 
   .cover-container {
     position: relative;
-    width: rem(362);
+    width: spvw(362);
     margin-left: auto;
     &__picture {
       width: 100%;
@@ -52,8 +52,12 @@
 
   .cover-container-double {
     width: 100%;
-    border-radius: 0 0 0 rem(113);
+    border-radius: 0 0 0 spvw(113);
     overflow: hidden;
+
+    & img {
+      width: 100%;
+    }
   }
 
   // カバー内の文字色と強調の文字サイズ
@@ -71,7 +75,7 @@
   }
 
   strong {
-    font-size: rem(24);
+    font-size: spvw(24);
     // vertical-align: bottom;
   }
 
@@ -120,18 +124,18 @@
 // pc版スライダー
 @include mq(pc) {
   .cover-card {
-    height: rem(85);
+    height: vw(85);
     width: fit-content;
-    padding-left: rem(16);
-    padding-right: rem(24);
+    padding-left: vw(16);
+    padding-right: vw(24);
     background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: flex-end;
 
-    font-size: rem(36);
+    font-size: vw(36);
     font-weight: bold;
 
-    border-radius: 0 rem(8) rem(8) 0;
+    border-radius: 0 vw(8) vw(8) 0;
 
     & span {
       display: inline-block;
@@ -140,28 +144,28 @@
 
   .card1 {
     position: absolute;
-    top: rem(430);
-    left: rem(6);
+    top: vw(430);
+    left: vw(6);
     z-index: 10;
     & > span {
-      padding-bottom: rem(13);
+      padding-bottom: vw(13);
     }
   }
 
   .card2 {
     position: absolute;
-    top: rem(534);
-    left: rem(6);
+    top: vw(534);
+    left: vw(6);
     z-index: 10;
 
     & > span {
-      padding-bottom: rem(16);
+      padding-bottom: vw(16);
     }
   }
 
   .cover-container {
     position: relative;
-    max-width: rem(1393);
+    max-width: vw(1393);
     margin-left: auto;
     &__picture {
       max-width: 100%;
@@ -171,12 +175,16 @@
   }
 
   .cover-container-double {
-    max-width: rem(1270);
+    max-width: vw(1270);
     margin-left: auto;
-    border-radius: 0 0 0 rem(160);
+    border-radius: 0 0 0 vw(160);
     overflow: hidden;
     position: relative;
     top: -9px;
+
+    & img {
+      width: 100%;
+    }
   }
 
   // カバー内の文字色と強調の文字サイズ
@@ -194,12 +202,12 @@
   }
 
   strong {
-    font-size: rem(44);
+    font-size: vw(44);
     // vertical-align: bottom;
   }
 
   .Poppins {
-    padding-bottom: rem(18) !important;
+    padding-bottom: vw(18) !important;
     letter-spacing: 0.01em;
   }
 
@@ -226,6 +234,7 @@
   }
 }
 
+// キャッチカバー周りのアニメーション
 .cover-card {
   transform: translateX(-100px);
   opacity: 0;

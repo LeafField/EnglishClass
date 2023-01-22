@@ -18,3 +18,7 @@ $breakpoints: (
 @function vw($pixel) {
   @return calc($pixel / 1536 * 100vw);
 }
+
+@function spvw($pixel) {
+  @return calc($pixel / 390 * 100vw);
+}
