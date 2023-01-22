@@ -141,9 +141,8 @@
   .card1 {
     position: absolute;
     top: rem(430);
-    // left: rem(-118);
+    left: rem(6);
     z-index: 10;
-
     & > span {
       padding-bottom: rem(13);
     }
@@ -152,8 +151,7 @@
   .card2 {
     position: absolute;
     top: rem(534);
-    // left: rem(-116);
-
+    left: rem(6);
     z-index: 10;
 
     & > span {

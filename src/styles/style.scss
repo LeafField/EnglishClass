@@ -152,7 +152,8 @@ body {
 
     @include mq(pc) {
       position: relative;
-      right: rem(39);
+      right: rem(40);
+      bottom: rem(5);
     }
   }
 
