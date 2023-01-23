@@ -219,7 +219,7 @@
   .swiper-pagination-fraction {
     bottom: 0 !important;
     // left: rem(670) !important;
-    top: rem(755);
+    top: vw(755);
     display: flex;
     justify-content: flex-end;
     height: 10px;
@@ -230,7 +230,7 @@
   .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
   .swiper-pagination-horizontal.swiper-pagination-bullets
     .swiper-pagination-bullet {
-    margin: 0 rem(11) !important;
+    margin: 0 vw(11) !important;
   }
 }
 
