@@ -1,0 +1,109 @@
+@use "util" as *;
+
+.ranking {
+  background-color: rgba(0, 121, 241, 0.05);
+  height: rem(322);
+  width: auto;
+  text-align: center;
+
+  &__banner {
+    display: flex;
+  }
+
+  &__banner--left {
+    position: relative;
+    top: rem(37);
+    left: rem(58);
+
+    & > img:nth-child(1) {
+      position: absolute;
+      height: rem(112);
+      left: rem(-34);
+      top: rem(-3);
+    }
+
+    & > .right-img {
+      position: absolute;
+      height: rem(112);
+      top: rem(-3);
+      right: rem(-34);
+    }
+
+    & .year {
+      font-size: rem(12);
+      font-weight: bold;
+    }
+
+    & .online {
+      font-size: rem(13);
+      font-weight: bold;
+      margin-top: rem(4);
+    }
+
+    & .classroom {
+      font-size: rem(13);
+      font-weight: bold;
+      margin-top: rem(3);
+    }
+
+    & > span {
+      font-size: rem(10);
+      color: #666;
+      position: absolute;
+      top: rem(86);
+      right: rem(2);
+    }
+
+    & .one {
+      font-size: rem(32);
+      font-weight: 800;
+      font-style: italic;
+      color: #f26618;
+      font-family: "Poppins";
+      margin-top: rem(-8);
+      margin-left: rem(-12);
+
+      & > span {
+        font-size: rem(40);
+      }
+    }
+  }
+
+  &__banner--right {
+    position: relative;
+    top: rem(36);
+    left: rem(123);
+
+    & .year {
+      font-size: rem(12);
+      font-weight: bold;
+    }
+
+    & .online {
+      font-size: rem(13);
+      font-weight: bold;
+    }
+
+    & .classroom {
+      font-size: rem(13);
+      font-weight: bold;
+    }
+
+    & > span {
+      font-size: rem(10);
+      color: #666;
+    }
+
+    & .one {
+      font-size: rem(32);
+      font-weight: 800;
+      font-style: italic;
+      color: #f26618;
+      font-family: "Poppins";
+
+      & > span {
+        font-size: rem(40);
+      }
+    }
+  }
+}

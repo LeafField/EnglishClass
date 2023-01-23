@@ -1,6 +1,66 @@
 @use "util" as *;
+
+.hero__desc {
+  padding-top: rem(50);
+  padding-bottom: rem(40);
+  @include mq(pc) {
+    padding-bottom: rem(72);
+  }
+
+  &--text {
+    font-size: rem(18);
+    text-align: center;
+
+    @include mq(pc) {
+      font-size: rem(30);
+    }
+
+    & p + p {
+      margin-top: rem(6);
+    }
+  }
+
+  &--button {
+    text-decoration: none;
+    display: block;
+    width: 280px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #f11f8d;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: rem(20);
+    font-weight: bold;
+    margin: 20px auto 0;
+    padding-top: 15px;
+    padding-left: 70px;
+    color: #fff;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      color: #f11f8d;
+      border: 1px solid #f11f8d;
+    }
+
+    @include mq(pc) {
+      width: rem(318);
+      height: rem(60);
+      margin-top: rem(32);
+      padding-top: rem(13);
+      padding-left: rem(86);
+    }
+
+    & > i {
+      font-size: 16px;
+      margin-left: 29px;
+      @include mq(pc) {
+        margin-left: rem(51);
+      }
+    }
+  }
+}
+
 .test {
-  width: 100vw;
-  height: 100px;
   background-color: black;
+  height: 100px;
 }
