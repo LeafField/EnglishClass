@@ -6,14 +6,38 @@
   width: auto;
   text-align: center;
 
+  @include mq(pc) {
+    height: rem(319);
+  }
+
+  &__container {
+    @include mq(pc) {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+
   &__banner {
     display: flex;
+    position: relative;
+    width: 57%;
+    height: 100%;
+    justify-content: space-between;
+
+    &--annotation {
+      position: absolute;
+      font-size: rem(12);
+      top: rem(157);
+      left: rem(46);
+      white-space: nowrap;
+    }
   }
 
   &__banner--left {
     position: relative;
     top: rem(37);
-    left: rem(58);
+    left: rem(57);
 
     & > img:nth-child(1) {
       position: absolute;
@@ -71,8 +95,8 @@
 
   &__banner--right {
     position: relative;
-    top: rem(36);
-    left: rem(123);
+    top: rem(37);
+    left: rem(111);
 
     & .year {
       font-size: rem(12);
@@ -82,16 +106,21 @@
     & .online {
       font-size: rem(13);
       font-weight: bold;
+      margin-top: rem(4);
     }
 
     & .classroom {
       font-size: rem(13);
       font-weight: bold;
+      margin-top: rem(3);
     }
 
     & > span {
       font-size: rem(10);
       color: #666;
+      position: absolute;
+      top: rem(85);
+      right: rem(11);
     }
 
     & .one {
@@ -100,9 +129,88 @@
       font-style: italic;
       color: #f26618;
       font-family: "Poppins";
+      margin-top: rem(-8);
+      margin-left: rem(-16);
 
       & > span {
         font-size: rem(40);
+      }
+    }
+
+    & > .left-img {
+      position: absolute;
+      height: rem(112);
+      left: rem(-33);
+      top: rem(-3);
+    }
+    & > .right-img {
+      position: absolute;
+      height: rem(112);
+      right: rem(-33);
+      top: rem(-3);
+    }
+  }
+}
+
+// ランキングセクション下部
+
+.ranking {
+  &__button {
+    margin-top: rem(81);
+
+    @include mq(pc) {
+      width: 43%;
+    }
+
+    &--campaign {
+      font-size: rem(20);
+      font-weight: bold;
+      color: #f11f8d;
+      position: relative;
+      width: fit-content;
+      margin: 0 auto;
+
+      &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        height: rem(1.5);
+        width: rem(30);
+        background-color: #f11f8d;
+        top: rem(14);
+        left: rem(-29);
+        transform: rotate(60deg);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: rem(1.5);
+        width: rem(30);
+        background-color: #f11f8d;
+        transform: rotate(-60deg);
+        top: rem(14);
+        right: rem(-33);
+      }
+    }
+
+    &--main {
+      display: block;
+      text-decoration: none;
+      color: #f11f8d;
+      border: rem(1.5) solid #f11f8d;
+      border-radius: rem(30);
+      width: rem(318);
+      height: rem(60);
+      margin: rem(8) auto;
+      font-size: rem(19.8);
+      padding-top: rem(12);
+      position: relative;
+
+      & > i {
+        right: 18px;
+        top: 15px;
       }
     }
   }

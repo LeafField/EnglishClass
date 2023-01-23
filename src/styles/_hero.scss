@@ -4,6 +4,7 @@
   padding-top: rem(50);
   padding-bottom: rem(40);
   @include mq(pc) {
+    padding-top: rem(47);
     padding-bottom: rem(72);
   }
 
@@ -17,6 +18,10 @@
 
     & p + p {
       margin-top: rem(6);
+
+      @include mq(pc) {
+        margin-top: rem(7);
+      }
     }
   }
 
@@ -47,7 +52,7 @@
       height: rem(60);
       margin-top: rem(32);
       padding-top: rem(13);
-      padding-left: rem(86);
+      padding-left: rem(88);
     }
 
     & > i {
