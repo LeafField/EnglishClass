@@ -86,13 +86,15 @@
 
   // SP版ページネーションの調整
 
+  .hero {
+    position: relative;
+  }
+
   .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
-    bottom: 0 !important;
-    left: 0 !important;
-    top: rem(455);
+    bottom: spvw(-24) !important;
   }
 
   .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
