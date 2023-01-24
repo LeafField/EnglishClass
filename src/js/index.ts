@@ -91,7 +91,5 @@ const tabHundler = (index: number) => {
 
 // 各タブとパネルを連動
 allTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => {
-    tabHundler(index);
-  });
+  tab.addEventListener("click", () => tabHundler(index));
 });
