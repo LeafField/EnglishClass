@@ -205,10 +205,16 @@
       height: rem(60);
       margin: rem(8) auto;
       font-size: rem(19.8);
-      padding-top: rem(12);
+      padding-top: rem(13);
       position: relative;
+      transition: all 0.3s;
+      &:hover {
+        color: #fff;
+        background-color: #f11f8d;
+      }
 
       & > i {
+        position: absolute;
         right: 18px;
         top: 15px;
       }
