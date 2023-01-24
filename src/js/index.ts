@@ -9,18 +9,34 @@ Swiper.use([Pagination, EffectFade]);
 const hamburger = <HTMLDivElement>document.querySelector(".hamburger");
 const menu = <HTMLDivElement>document.querySelector(".header__menu");
 
+// ハンバーガーメニューのトグル
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   menu.classList.toggle("active");
 });
 
+// リサイズした際メニューを閉じる
 window.addEventListener("resize", () => {
   hamburger.classList.remove("active");
   menu.classList.remove("active");
 });
 
+// リンクをクリックした際もメニューを閉じる
+const linkClickHundler = () => {
+  hamburger.classList.remove("active");
+  menu.classList.remove("active");
+};
+
+// linkClickHundlerをメニュー内のａタグに適用
+const links: NodeListOf<HTMLAnchorElement> =
+  document.querySelectorAll(".header__menu a");
+
+links.forEach((link) => {
+  link.addEventListener("click", linkClickHundler);
+});
+
 // スライダーの実装
-new Swiper(".swiper", {
+const swiper = new Swiper(".swiper", {
   effect: "fade",
   fadeEffect: {
     crossFade: true,
@@ -31,3 +47,6 @@ new Swiper(".swiper", {
     clickable: true,
   },
 });
+
+// クリックしたら次のスライドへ
+swiper.on("click", () => [swiper.slideNext()]);

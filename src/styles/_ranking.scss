@@ -6,12 +6,17 @@
   width: auto;
   text-align: center;
 
-  @include mq(pc) {
+  @include mq(pc3) {
     height: rem(319);
   }
 
   &__container {
-    @include mq(pc) {
+    @include mq(sp3) {
+      max-width: rem(390);
+    }
+    margin: 0 auto;
+
+    @include mq(pc3) {
       display: flex;
       justify-content: space-between;
       height: 100%;
@@ -25,12 +30,22 @@
     height: 100%;
     justify-content: space-between;
 
+    @include mq(pc3) {
+      max-width: rem(875.72);
+      margin-left: auto;
+    }
+
     &--annotation {
       position: absolute;
       font-size: rem(12);
       top: rem(157);
       left: rem(46);
       white-space: nowrap;
+
+      @include mq(pc3) {
+        top: rem(241);
+        left: rem(310);
+      }
     }
   }
 
@@ -39,11 +54,22 @@
     top: rem(37);
     left: rem(57);
 
+    @include mq(pc3) {
+      top: rem(64);
+      left: rem(358);
+    }
+
     & > img:nth-child(1) {
       position: absolute;
       height: rem(112);
       left: rem(-34);
       top: rem(-3);
+
+      @include mq(pc3) {
+        height: rem(160);
+        left: rem(-48);
+        top: rem(-1);
+      }
     }
 
     & > .right-img {
@@ -51,23 +77,42 @@
       height: rem(112);
       top: rem(-3);
       right: rem(-34);
+
+      @include mq(pc3) {
+        height: rem(160);
+        right: rem(-48);
+        top: rem(-1);
+      }
     }
 
     & .year {
       font-size: rem(12);
       font-weight: bold;
+
+      @include mq(pc3) {
+        font-size: rem(16);
+      }
     }
 
     & .online {
       font-size: rem(13);
       font-weight: bold;
       margin-top: rem(4);
+
+      @include mq(pc3) {
+        font-size: rem(20);
+      }
     }
 
     & .classroom {
       font-size: rem(13);
       font-weight: bold;
       margin-top: rem(3);
+
+      @include mq(pc3) {
+        font-size: rem(20);
+        margin-top: rem(6);
+      }
     }
 
     & > span {
@@ -87,8 +132,17 @@
       margin-top: rem(-8);
       margin-left: rem(-12);
 
+      @include mq(pc3) {
+        font-size: rem(40);
+        margin-top: rem(-12);
+      }
+
       & > span {
         font-size: rem(40);
+
+        @include mq(pc3) {
+          font-size: rem(60);
+        }
       }
     }
   }
@@ -98,21 +152,36 @@
     top: rem(37);
     left: rem(111);
 
+    @include mq(pc3) {
+      top: rem(64);
+      left: rem(-107);
+    }
+
     & .year {
       font-size: rem(12);
       font-weight: bold;
+
+      @include mq(pc3) {
+        font-size: rem(16);
+      }
     }
 
     & .online {
       font-size: rem(13);
       font-weight: bold;
       margin-top: rem(4);
+      @include mq(pc3) {
+        font-size: rem(20);
+      }
     }
 
     & .classroom {
       font-size: rem(13);
       font-weight: bold;
       margin-top: rem(3);
+      @include mq(pc3) {
+        font-size: rem(20);
+      }
     }
 
     & > span {
@@ -132,8 +201,17 @@
       margin-top: rem(-8);
       margin-left: rem(-16);
 
+      @include mq(pc3) {
+        font-size: rem(40);
+        margin-top: rem(-10);
+      }
+
       & > span {
         font-size: rem(40);
+
+        @include mq(pc3) {
+          font-size: rem(60);
+        }
       }
     }
 
@@ -142,12 +220,24 @@
       height: rem(112);
       left: rem(-33);
       top: rem(-3);
+
+      @include mq(pc3) {
+        height: rem(160);
+        left: rem(-48);
+        top: rem(-1);
+      }
     }
     & > .right-img {
       position: absolute;
       height: rem(112);
       right: rem(-33);
       top: rem(-3);
+
+      @include mq(pc3) {
+        height: rem(160);
+        right: rem(-48);
+        top: rem(-1);
+      }
     }
   }
 }
@@ -158,7 +248,7 @@
   &__button {
     margin-top: rem(81);
 
-    @include mq(pc) {
+    @include mq(pc3) {
       width: 43%;
     }
 
