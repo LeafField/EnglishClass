@@ -1,0 +1,31 @@
+@use "util" as *;
+
+.heading2 {
+  font-size: rem(24);
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+
+  @include mq(pc) {
+    font-size: rem(36);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: rem(24);
+    height: rem(2);
+    background-color: #0079f2;
+    position: absolute;
+    top: rem(46);
+    left: rem(47);
+
+    @include mq(pc) {
+      width: rem(36);
+      top: rem(69);
+      left: rem(74);
+    }
+  }
+}
