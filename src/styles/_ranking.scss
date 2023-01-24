@@ -260,6 +260,11 @@
       width: fit-content;
       margin: 0 auto;
 
+      @include mq(pc3) {
+        margin: rem(-16) auto 0 rem(129);
+        font-size: rem(24);
+      }
+
       &::before {
         display: block;
         position: absolute;
@@ -270,6 +275,11 @@
         top: rem(14);
         left: rem(-29);
         transform: rotate(60deg);
+
+        @include mq(pc3) {
+          top: rem(17);
+          left: rem(-43);
+        }
       }
 
       &::after {
@@ -282,6 +292,11 @@
         transform: rotate(-60deg);
         top: rem(14);
         right: rem(-33);
+
+        @include mq(pc3) {
+          top: rem(17);
+          right: rem(-38);
+        }
       }
     }
 
@@ -298,6 +313,17 @@
       padding-top: rem(13);
       position: relative;
       transition: all 0.3s;
+
+      @include mq(pc3) {
+        margin: rem(14) auto 0 0;
+        font-size: rem(22.7);
+        width: rem(349);
+        height: rem(76);
+        border-radius: rem(38);
+        border: 2px solid #f11f8d;
+        padding-top: rem(18);
+      }
+
       &:hover {
         color: #fff;
         background-color: #f11f8d;
@@ -307,6 +333,11 @@
         position: absolute;
         right: 18px;
         top: 15px;
+
+        @include mq(pc3) {
+          top: rem(18);
+          right: rem(20);
+        }
       }
     }
   }

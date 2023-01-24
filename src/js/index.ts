@@ -46,6 +46,7 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  loop: true,
 });
 
 // クリックしたら次のスライドへ
