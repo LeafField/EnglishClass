@@ -94,6 +94,7 @@
         margin: rem(24);
         flex-direction: row;
         justify-content: center;
+        column-gap: rem(24);
       }
     }
 
@@ -101,22 +102,41 @@
       text-align: center;
       width: 100%;
 
+      @include mq(pc) {
+        width: calc((100% - (rem(24) * 4)) / 3);
+      }
+
       &:first-child {
         margin-top: rem(24);
+
+        @include mq(pc) {
+          margin-top: rem(4);
+        }
       }
 
       & + .course__panel--container {
         margin-top: rem(34);
+        @include mq(pc) {
+          margin-top: rem(4);
+        }
       }
 
       &:last-child {
         margin-bottom: rem(23);
+        @include mq(pc) {
+          margin-top: rem(25);
+          margin-bottom: rem(22);
+        }
       }
     }
 
     &--img {
       width: calc(100% - rem(48));
       margin: 0 auto;
+
+      @include mq(pc) {
+        width: 100%;
+      }
 
       overflow: hidden;
       & > img {
@@ -128,11 +148,23 @@
 
     &--text {
       font-size: rem(20);
-      margin-top: rem(-5);
+
+      @include mq(sp) {
+        margin-top: rem(-5);
+      }
+
+      @include mq(pc) {
+        font-size: rem(24);
+      }
     }
 
     &--year {
       font-size: rem(16);
+
+      @include mq(pc) {
+        font-size: rem(18);
+        margin-top: rem(-5);
+      }
     }
   }
 }
