@@ -79,8 +79,6 @@ const allPanels = <NodeListOf<HTMLDivElement>>(
   document.querySelectorAll(".course__panel")
 );
 
-// クリックしたタブとパネルの連動
-
 // 各タブとパネルから一度activeクラスを取り除き、クリックしたタブとそれに対応するパネルにactiveクラスを付与
 const tabHundler = (index: number) => {
   allTabs.forEach((tab) => tab.classList.remove("active"));
