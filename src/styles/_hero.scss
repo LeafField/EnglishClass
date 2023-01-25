@@ -40,11 +40,11 @@
     padding-left: 70px;
     color: #fff;
     transition: all 0.3s;
+    border: 1px solid #f11f8d;
 
     &:hover {
       background-color: #fff;
       color: #f11f8d;
-      border: 1px solid #f11f8d;
     }
 
     @include mq(pc) {

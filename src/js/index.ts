@@ -7,9 +7,9 @@ import "../styles/style.scss";
 import "swiper/swiper-bundle.min.css";
 import Swiper, { Pagination, EffectFade } from "swiper";
 
-/**-----------------------------------------------------------------------------------------------------
+/**--------------------------------------------------------
  * ハンバーガーメニュートグルの実装
--------------------------------------------------------------------------------------------------------- */
+----------------------------------------------------------- */
 
 // 必要なDOMの取得
 const hamburger = <HTMLDivElement>document.querySelector(".hamburger");
@@ -17,6 +17,7 @@ const menu = <HTMLDivElement>document.querySelector(".header__menu");
 const links = <NodeListOf<HTMLAnchorElement>>(
   document.querySelectorAll(".header__menu a")
 );
+const headerTitle = <HTMLDivElement>document.querySelector(".header__title");
 
 // ハンバーガーメニューのトグル
 hamburger.addEventListener("click", () => {
@@ -24,22 +25,22 @@ hamburger.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
 
-// リサイズした際メニューを閉じる
-window.addEventListener("resize", () => {
-  hamburger.classList.remove("active");
-  menu.classList.remove("active");
-});
-
-// リンクをクリックした際もメニューを閉じる
+// 特定のアクションに対してメニューを閉じるコールバック関数
 const linkClickHundler = () => {
   hamburger.classList.remove("active");
   menu.classList.remove("active");
 };
 
+// リサイズした際メニューを閉じる
+window.addEventListener("resize", linkClickHundler);
+
 // linkClickHundlerをメニュー内のａタグに適用
 links.forEach((link) => {
   link.addEventListener("click", linkClickHundler);
 });
+
+// linkClickHundlerをヘッダータイトルにも適用
+headerTitle.addEventListener("click", linkClickHundler);
 
 /**---------------------------------------------------------------
  * スライダーの実装
