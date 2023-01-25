@@ -9,6 +9,11 @@
 
   &__container {
     margin: 0 rem(16);
+
+    @include mq(pc) {
+      max-width: rem(1080);
+      margin: 0 auto;
+    }
   }
 
   &__title {
@@ -25,6 +30,11 @@
     justify-content: center;
     column-gap: rem(8);
 
+    @include mq(pc) {
+      column-gap: rem(24);
+      margin-top: rem(57);
+    }
+
     &--container {
       width: calc((100% - rem(16)) / 3);
       height: rem(65);
@@ -35,6 +45,12 @@
       align-items: center;
       font-size: rem(18);
       cursor: pointer;
+
+      @include mq(pc) {
+        font-size: rem(26);
+        height: rem(80);
+        width: calc((100% - rem(48)) - 3);
+      }
 
       &.active {
         background-color: #f2a118;
