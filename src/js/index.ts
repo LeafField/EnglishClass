@@ -118,8 +118,10 @@ const options: IntersectionObserverInit = {
   rootMargin: "-50% 0px",
 };
 
+// IntersectionObserverのイニシャライズ
 const observer = new IntersectionObserver(observerCallback, options);
 
+// IntersectionObserverを各要素に適用
 animationImages.forEach((image) => {
   observer.observe(image);
 });
