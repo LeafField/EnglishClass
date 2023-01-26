@@ -1,5 +1,6 @@
 // リセットcss
 import "ress";
+
 // メインのスタイル
 import "../styles/style.scss";
 
@@ -91,4 +92,34 @@ const tabHundler = (index: number) => {
 // 各タブとパネルを連動
 allTabs.forEach((tab, index) => {
   tab.addEventListener("click", () => tabHundler(index));
+});
+
+/**------------------------------------------------
+ * featureセクションのスクロールアニメーション
+---------------------------------------------------*/
+// 必要な要素の取得
+const animationImages = <NodeListOf<HTMLImageElement>>(
+  document.querySelectorAll(".feature__img")
+);
+
+//  発火時のコールバック関数
+const observerCallback: IntersectionObserverCallback = (
+  entries: IntersectionObserverEntry[],
+  observer: IntersectionObserver
+) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("active");
+    observer.unobserve(entry.target);
+  });
+};
+// IntersectionObserverのオプション
+const options: IntersectionObserverInit = {
+  rootMargin: "-50% 0px",
+};
+
+const observer = new IntersectionObserver(observerCallback, options);
+
+animationImages.forEach((image) => {
+  observer.observe(image);
 });

@@ -4,6 +4,7 @@
 @forward "ranking";
 @forward "components";
 @forward "course";
+@forward "feature";
 
 // コモン
 html {
@@ -45,7 +46,7 @@ body {
 .header {
   position: fixed;
   z-index: 100;
-  width: calc(100% - 1rem);
+  width: calc(100vw - 1rem);
   height: rem(66);
   background-color: #0079f2;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);

@@ -1,0 +1,408 @@
+@use "util" as *;
+
+// SP版
+@include mq(sp) {
+  // セクションの大枠
+  .feature {
+    padding-top: rem(70);
+    padding-bottom: rem(74);
+  }
+
+  // タイトル
+  .feature__title {
+    text-align: center;
+    font-size: rem(24);
+    font-weight: bold;
+    position: relative;
+    margin: 0 auto;
+    width: fit-content;
+
+    .title__text--second {
+      display: inline-block;
+      margin-top: rem(7);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: rem(24);
+      height: rem(2);
+      background-color: #0079f2;
+      position: absolute;
+      top: rem(88);
+      left: rem(86);
+    }
+  }
+
+  // セクション内のコンテナ
+
+  .feature__container {
+    margin-top: rem(46);
+    overflow-x: hidden;
+  }
+
+  // コンテナ内の各ポイント
+
+  // 第一
+  .feature {
+    &__point--first {
+      width: 100%;
+    }
+
+    &__img {
+      width: calc(100% - rem(32));
+      margin: 0 auto;
+
+      & > img {
+        width: 100%;
+        border-radius: rem(8);
+        object-fit: cover;
+      }
+    }
+
+    // テキスト部分
+    &__desc {
+      margin: 1px 16px;
+    }
+
+    &__text--number {
+      font-family: "Poppins", sans-serif;
+      font-size: rem(60);
+      font-weight: bold;
+      font-style: italic;
+      color: #46c017;
+      height: fit-content;
+      line-height: 1.1;
+    }
+
+    &__text--under {
+      font-size: rem(18);
+      letter-spacing: -0.029em;
+      line-height: 1.7;
+      margin-top: rem(-3);
+    }
+  }
+
+  // 第二
+  .feature {
+    &__point--second {
+      width: 100%;
+      margin-top: rem(36);
+
+      & .feature__text--under {
+        font-size: rem(18);
+        letter-spacing: -0.01em;
+        line-height: 1.7;
+        margin-top: rem(-3);
+      }
+    }
+
+    &__img {
+      width: calc(100% - rem(32));
+      margin: 0 auto;
+
+      & > img {
+        width: 100%;
+        border-radius: rem(8);
+        object-fit: cover;
+      }
+    }
+
+    // テキスト部分
+    &__desc {
+      margin: 1px 16px;
+    }
+
+    &__text--number {
+      font-family: "Poppins", sans-serif;
+      font-size: rem(60);
+      font-weight: bold;
+      font-style: italic;
+      color: #46c017;
+      height: fit-content;
+      line-height: 1.1;
+    }
+  }
+
+  //
+  .feature {
+    &__point--third {
+      width: 100%;
+      margin-top: rem(37);
+
+      & .feature__text--under {
+        font-size: rem(18);
+        letter-spacing: -0.025em;
+        line-height: 1.7;
+        margin-top: rem(-3);
+      }
+    }
+
+    &__img {
+      width: calc(100% - rem(32));
+      margin: 0 auto;
+
+      & > img {
+        width: 100%;
+        border-radius: rem(8);
+        object-fit: cover;
+      }
+    }
+
+    // テキスト部分
+    &__desc {
+      margin: 1px 16px;
+    }
+
+    &__text--number {
+      font-family: "Poppins", sans-serif;
+      font-size: rem(60);
+      font-weight: bold;
+      font-style: italic;
+      color: #46c017;
+      height: fit-content;
+      line-height: 1.1;
+    }
+  }
+}
+
+// pc版
+
+@include mq(pc) {
+  // セクションの大枠
+  .feature {
+    padding-top: rem(102);
+    padding-bottom: rem(86);
+    overflow-x: hidden;
+  }
+
+  // セクションのタイトル
+
+  .feature {
+    &__title {
+      font-size: rem(36);
+      font-weight: bold;
+      text-align: center;
+      margin-left: 1px;
+      position: relative;
+      width: fit-content;
+      margin: 0 auto;
+
+      & .title__text--first {
+        letter-spacing: 0.008em;
+      }
+
+      & .title__text--second {
+        display: block;
+        margin-top: rem(10);
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: rem(36);
+        height: rem(2);
+        background-color: #0079f2;
+        position: absolute;
+        top: rem(131);
+        left: rem(132);
+      }
+    }
+
+    // コンテナ
+    &__container {
+      max-width: min(vw(1080), rem(1080));
+      margin: 0 auto;
+    }
+  }
+
+  //セクションの各ポイント
+  .feature__point {
+    // 第一
+    &--first {
+      display: flex;
+      justify-content: center;
+      flex-direction: row-reverse;
+      margin-top: vw(59);
+
+      // 画像
+      & .feature__img {
+        max-width: 50%;
+
+        & > img {
+          width: 100%;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+
+      // テキスト
+      .feature__desc {
+        width: 50%;
+      }
+      .feature__text {
+        &--number {
+          font-size: rem(80);
+          font-family: "Poppins", sans-serif;
+          line-height: 1;
+          font-style: italic;
+          color: #46c017;
+          margin-top: rem(100);
+          margin-left: rem(-3);
+        }
+
+        &--under {
+          font-size: rem(24);
+          width: 94%;
+          letter-spacing: -0.025em;
+          margin-top: rem(6);
+          line-height: 1.7;
+        }
+      }
+    }
+    //第二ポイント
+    &--second {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      margin-top: rem(38);
+
+      // 画像
+      & .feature__img {
+        max-width: 50%;
+
+        & > img {
+          width: 100%;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+
+      // テキスト
+      .feature__desc {
+        width: 50%;
+      }
+      .feature__text {
+        &--number {
+          font-size: rem(80);
+          font-family: "Poppins", sans-serif;
+          line-height: 1;
+          font-style: italic;
+          color: #46c017;
+          margin-top: rem(100);
+          margin-left: rem(45);
+          overflow-wrap: break-all;
+        }
+
+        &--under {
+          font-size: rem(24);
+          width: 94%;
+          letter-spacing: -0.025em;
+          margin-top: rem(6);
+          line-height: 1.7;
+          margin-left: rem(48);
+        }
+      }
+    }
+
+    // 第三
+    &--third {
+      display: flex;
+      justify-content: center;
+      flex-direction: row-reverse;
+      margin-top: rem(40);
+
+      // 画像
+      & .feature__img {
+        max-width: 50%;
+
+        & > img {
+          width: 100%;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+
+      // テキスト
+      .feature__desc {
+        width: 50%;
+      }
+      .feature__text {
+        &--number {
+          font-size: rem(80);
+          font-family: "Poppins", sans-serif;
+          line-height: 1;
+          font-style: italic;
+          color: #46c017;
+          margin-top: rem(100);
+          margin-left: rem(-3);
+        }
+
+        &--under {
+          font-size: rem(24);
+          width: 94%;
+          letter-spacing: -0.025em;
+          margin-top: rem(6);
+          line-height: 1.7;
+        }
+      }
+    }
+  }
+}
+
+// メディアクエリ間の文字の位置とサイズの調整
+
+@media (max-width: 1200px) {
+  .feature__text--number {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+  .feature__text--number {
+    font-size: rem(60) !important;
+  }
+
+  .feature__text--under {
+    font-size: rem(18) !important;
+  }
+}
+
+// フリートライアル部分の微調整
+
+@include mq(sp) {
+  .freetrial__text--feature {
+    margin-left: 0;
+  }
+}
+
+// アニメーション用
+
+div[class^="feature__point"]:nth-child(2n + 1) .feature__img {
+  transform: translateX(200px);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+div[class^="feature__point"]:nth-child(2n) .feature__img {
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+@include mq(sp) {
+  div[class^="feature__point"]:nth-child(2n + 1) .feature__img {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+  }
+  div[class^="feature__point"]:nth-child(2n) .feature__img {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+  }
+}
+
+div[class^="feature__point"] .feature__img.active {
+  transform: none;
+  opacity: 1;
+}
