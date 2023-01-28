@@ -1,0 +1,257 @@
+@use "util" as *;
+
+// SP版
+
+// セクションの大枠
+@include mq(sp) {
+  .teacher {
+    padding-top: rem(76);
+    padding-bottom: rem(80);
+
+    // セクションタイトルの微修正
+    &__title::before {
+      top: rem(46);
+      left: rem(36);
+    }
+  }
+  // セクションの内枠
+  .teacher__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  // 一枚目のパネル
+  .teacher {
+    &__panel--top {
+      width: rem(310);
+      height: rem(372);
+      margin: rem(45) auto 0px auto;
+      border-radius: rem(8);
+      background-color: #ffeee5;
+    }
+    // 画像
+    &__img--top {
+      width: rem(130);
+      margin: rem(17) auto 0 auto;
+      & img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+
+    // テキスト
+    &__text {
+      &--name {
+        text-align: center;
+        font-size: rem(18);
+        font-weight: bold;
+        margin-top: rem(3);
+      }
+
+      &--year {
+        text-align: center;
+        font-size: rem(14);
+        font-weight: bold;
+        margin-top: rem(8);
+      }
+    }
+
+    &__introduction {
+      width: rem(278);
+      height: rem(131);
+      margin: rem(16) auto 0 auto;
+      background-color: #fff;
+      border-radius: rem(8);
+      font-size: rem(16);
+      padding: rem(15) rem(20) rem(16) rem(17);
+
+      & > p {
+        margin-top: rem(-7);
+        margin-left: rem(-1);
+        line-height: 1.75;
+      }
+    }
+
+    // 二枚目
+    &__panel--bottom {
+      width: rem(310);
+      height: rem(372);
+      margin: rem(25) auto 0px auto;
+      border-radius: rem(8);
+      background-color: #ffeee5;
+    }
+    // 画像
+    &__img--bottom {
+      width: rem(130);
+      margin: rem(17) auto 0 auto;
+      & img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+
+    // テキスト
+    &__text {
+      &--name {
+        text-align: center;
+        font-size: rem(18);
+        font-weight: bold;
+        margin-top: rem(3);
+      }
+
+      &--year {
+        text-align: center;
+        font-size: rem(14);
+        font-weight: bold;
+        margin-top: rem(8);
+      }
+    }
+
+    &__introduction--second {
+      width: rem(278);
+      height: rem(131);
+      margin: rem(16) auto 0 auto;
+      background-color: #fff;
+      border-radius: rem(8);
+      font-size: rem(16);
+      padding: rem(15) rem(20) rem(16) rem(17);
+
+      & > p {
+        margin-top: rem(-7);
+        margin-left: rem(-1);
+        line-height: 1.75;
+      }
+    }
+  }
+}
+
+// pc版
+@include mq(pc) {
+  // セクションの大枠
+  .teacher {
+    padding-top: rem(101);
+    padding-bottom: rem(94);
+
+    // セクションタイトルの微修正
+    &__title::before {
+      top: rem(70);
+      left: rem(54);
+    }
+  }
+
+  // セクションの内枠
+  .teacher__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: rem(32);
+  }
+
+  // 一枚目のパネル
+  .teacher {
+    &__panel--top {
+      width: rem(360);
+      height: rem(394);
+      margin-top: rem(60);
+      border-radius: rem(8);
+      background-color: #ffeee5;
+    }
+    // 画像
+    &__img--top {
+      width: rem(130);
+      margin: rem(23) auto 0 auto;
+      & img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+
+    // テキスト
+    &__text {
+      &--name {
+        text-align: center;
+        font-size: rem(18);
+        font-weight: bold;
+        margin-top: 8px;
+      }
+
+      &--year {
+        text-align: center;
+        font-size: rem(14);
+        font-weight: bold;
+        margin-top: rem(6);
+      }
+    }
+
+    &__introduction {
+      width: rem(312);
+      height: rem(131);
+      margin: rem(21) auto 0 auto;
+      background-color: #fff;
+      border-radius: rem(8);
+      font-size: rem(16);
+      padding: rem(15) rem(20) rem(16) rem(17);
+
+      & > p {
+        margin-top: rem(-7);
+        margin-left: rem(-1);
+        line-height: 1.75;
+      }
+    }
+
+    // 二枚目
+    &__panel--bottom {
+      width: rem(360);
+      height: rem(394);
+      margin-top: rem(60);
+      border-radius: rem(8);
+      background-color: #ffeee5;
+    }
+    // 画像
+    &__img--bottom {
+      width: rem(130);
+      margin: rem(23) auto 0 auto;
+      & img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+
+    &__introduction--second {
+      width: rem(312);
+      height: rem(103);
+      margin: rem(21) auto 0 auto;
+      background-color: #fff;
+      border-radius: rem(8);
+      font-size: rem(16);
+      padding: rem(15) rem(20) rem(16) rem(17);
+
+      & > p {
+        margin-top: rem(-7);
+        margin-left: rem(-1);
+        line-height: 1.75;
+      }
+    }
+  }
+}
+
+// フリートライアルの微調整
+.freetrial__text--teacher {
+  & > .freetrial__text--first {
+    margin-left: rem(6);
+
+    @include mq(pc) {
+      margin-left: 0;
+    }
+  }
+
+  & > .freetrial__text--second {
+    margin-top: rem(5);
+    margin-left: rem(6);
+
+    @include mq(pc) {
+      margin-left: rem(1);
+    }
+  }
+}
