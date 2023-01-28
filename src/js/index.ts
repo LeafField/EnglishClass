@@ -113,6 +113,7 @@ const observerCallback: IntersectionObserverCallback = (
     observer.unobserve(entry.target);
   });
 };
+
 // IntersectionObserverのオプション
 const options: IntersectionObserverInit = {
   rootMargin: "-50% 0px",

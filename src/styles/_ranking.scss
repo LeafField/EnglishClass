@@ -121,6 +121,12 @@
       position: absolute;
       top: rem(86);
       right: rem(2);
+
+      @include mq(pc3) {
+        font-size: rem(12);
+        top: rem(131);
+        right: rem(15);
+      }
     }
 
     & .one {
@@ -190,6 +196,12 @@
       position: absolute;
       top: rem(85);
       right: rem(11);
+
+      @include mq(pc3) {
+        font-size: rem(12);
+        top: rem(131);
+        right: rem(25);
+      }
     }
 
     & .one {
