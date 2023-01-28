@@ -6,14 +6,17 @@
 @forward "course";
 @forward "feature";
 @forward "teacher";
+@forward "price";
 
 // コモン
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Noto Sans JP", sans-serif;
+  overflow-x: hidden;
 }
 
 // 共通部品

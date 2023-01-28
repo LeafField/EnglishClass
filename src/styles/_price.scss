@@ -1,0 +1,140 @@
+@use "util" as *;
+
+// セクションの大枠
+.price {
+  padding-top: rem(72);
+  padding-bottom: 100px;
+
+  @include mq(pc) {
+    padding-top: rem(101);
+  }
+
+  // セクションのサブタイトル
+  &__subTitle {
+    font-size: clamp(rem(20), spvw(20), rem(25));
+  }
+
+  // 各グラフのコンテナ
+  &__container {
+    margin-top: 37px;
+    width: min(per(358, 390), rem(752));
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(pc) {
+      margin-top: rem(51);
+    }
+  }
+
+  // グラフ
+  &__graph {
+    border: rem(3) solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: rem(14);
+    height: rem(314);
+
+    @include mq(pc) {
+      th {
+        font-size: rem(18);
+      }
+    }
+
+    & thead {
+      & th {
+        background-color: #f5f5f5;
+        height: rem(48);
+        text-align: center;
+
+        @include mq(pc) {
+          height: 50px;
+        }
+      }
+      & th:first-child {
+        width: per(114, 352);
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+
+        @include mq(pc) {
+          width: per(rem(235), rem(746));
+        }
+      }
+
+      & th + th {
+        border-bottom: 1px solid #ddd;
+
+        @include mq(pc) {
+          height: 50px;
+          padding-bottom: 2px;
+        }
+      }
+    }
+
+    & tbody {
+      & th {
+        height: 88px;
+        border: 1px solid #ddd;
+        color: #0079f2;
+
+        @include mq(pc) {
+          height: rem(96);
+        }
+      }
+
+      & td {
+        border: 1px solid #ddd;
+        height: 88px;
+        & > p:nth-child(1) {
+          font-size: rem(14);
+          text-align: center;
+          margin-top: rem(5);
+
+          @include mq(pc) {
+            font-size: rem(16);
+            margin-top: rem(6);
+          }
+        }
+        & > p:nth-child(2) {
+          font-size: rem(32.3);
+          font-weight: bold;
+          color: #46c017;
+          text-align: center;
+          font-family: "Poppins";
+          position: relative;
+          top: rem(4);
+
+          @include mq(pc) {
+            font-size: rem(36.3);
+            top: 0;
+          }
+
+          & > span {
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: rem(14.1);
+            font-weight: normal;
+
+            @include mq(pc) {
+              font-size: rem(16.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 微調整用
+.price__graph {
+  tbody {
+    td {
+      .relative {
+        position: relative;
+        left: rem(4);
+
+        @include mq(pc) {
+          left: 0;
+        }
+      }
+    }
+  }
+}

@@ -24,3 +24,7 @@ $breakpoints: (
 @function spvw($pixel) {
   @return calc($pixel / 390 * 100vw);
 }
+
+@function per($pixel, $parent) {
+  @return calc($pixel / $parent * 100%);
+}
