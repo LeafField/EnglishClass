@@ -1,0 +1,13 @@
+@use "util" as *;
+
+// セクションタイトル
+.question {
+  padding-top: rem(73);
+  &__title::before {
+    left: rem(72);
+  }
+
+  &__container {
+    margin-top: 100px;
+  }
+}

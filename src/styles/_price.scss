@@ -3,20 +3,36 @@
 // セクションの大枠
 .price {
   padding-top: rem(72);
-  padding-bottom: 100px;
+  padding-bottom: rem(146);
 
   @include mq(pc) {
     padding-top: rem(101);
+    padding-bottom: rem(110);
   }
 
   // セクションのサブタイトル
   &__subTitle {
-    font-size: clamp(rem(20), spvw(20), rem(25));
+    font-size: rem(20);
+    @include mq(pc) {
+      font-size: rem(25);
+    }
+  }
+
+  // 各グラフ下の注釈
+  &__annotation {
+    font-size: rem(12);
+    margin-top: rem(6);
+    margin-left: rem(-1);
+    text-align: center;
+
+    @include mq(pc) {
+      text-align: left;
+    }
   }
 
   // 各グラフのコンテナ
   &__container {
-    margin-top: 37px;
+    margin-top: rem(37);
     width: min(per(358, 390), rem(752));
     margin-left: auto;
     margin-right: auto;
@@ -47,13 +63,13 @@
         text-align: center;
 
         @include mq(pc) {
-          height: 50px;
+          height: rem(50);
         }
       }
       & th:first-child {
         width: per(114, 352);
-        border-right: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
+        border-right: rem(1) solid #ddd;
+        border-bottom: rem(1) solid #ddd;
 
         @include mq(pc) {
           width: per(rem(235), rem(746));
@@ -61,19 +77,19 @@
       }
 
       & th + th {
-        border-bottom: 1px solid #ddd;
+        border-bottom: rem(1) solid #ddd;
 
         @include mq(pc) {
-          height: 50px;
-          padding-bottom: 2px;
+          height: rem(50);
+          padding-bottom: rem(2);
         }
       }
     }
 
     & tbody {
       & th {
-        height: 88px;
-        border: 1px solid #ddd;
+        height: rem(88);
+        border: rem(1) solid #ddd;
         color: #0079f2;
 
         @include mq(pc) {
@@ -82,8 +98,8 @@
       }
 
       & td {
-        border: 1px solid #ddd;
-        height: 88px;
+        border: rem(1) solid #ddd;
+        height: rem(88);
         & > p:nth-child(1) {
           font-size: rem(14);
           text-align: center;
@@ -135,6 +151,60 @@
           left: 0;
         }
       }
+    }
+  }
+}
+
+// 二つ目のグラフの微調整用
+@include mq(pc) {
+  .price__container--second {
+    margin-top: rem(35);
+
+    & .price__graph {
+      margin-top: rem(11);
+    }
+  }
+}
+
+@include mq(sp) {
+  .price__container--second {
+    height: rem(369);
+    margin-top: rem(50);
+
+    & .price__graph {
+      & thead th {
+        width: rem(56);
+        height: rem(51);
+      }
+
+      & tbody tr:nth-child(1) th {
+        height: rem(114);
+      }
+      & tbody tr:nth-child(2) th {
+        height: rem(90);
+      }
+      & tbody tr:nth-child(3) th {
+        height: rem(114);
+      }
+
+      & tbody tr:nth-child(1) td p:nth-child(1) {
+        margin-left: rem(1);
+        margin-top: rem(3);
+        line-height: 1.75;
+      }
+      & tbody tr:nth-child(1) td p:nth-child(2) {
+        top: 0;
+      }
+
+      & tbody tr:nth-child(3) td p:nth-child(1) {
+        margin-left: rem(9);
+        margin-top: rem(6);
+        line-height: 1.8;
+        padding-right: rem(8);
+      }
+    }
+    & tbody tr:nth-child(3) td p:nth-child(2) {
+      top: 0;
     }
   }
 }
