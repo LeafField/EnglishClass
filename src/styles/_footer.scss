@@ -1,0 +1,64 @@
+@use "util" as *;
+
+// フッター上部、SNSロゴ部分
+.footer {
+  padding-bottom: rem(28);
+  @include mq(pc) {
+    padding-bottom: rem(31);
+  }
+
+  // 大枠
+  &__top {
+    width: 100%;
+    height: rem(127);
+    background-color: #222;
+
+    @include mq(pc) {
+      height: rem(130);
+    }
+  }
+
+  // 中身
+  &__sns {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    column-gap: rem(41);
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    @include mq(pc) {
+      column-gap: rem(38);
+    }
+
+    & li a {
+      color: #fff;
+      font-size: 2rem;
+    }
+  }
+
+  // フッター下部
+  &__bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    width: fit-content;
+    margin-top: rem(30);
+  }
+
+  & small {
+    font-size: rem(10);
+    font-weight: bold;
+    font-family: "Poppins";
+    margin-top: rem(21);
+
+    @include mq(pc) {
+      margin-top: rem(26);
+    }
+  }
+}

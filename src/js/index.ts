@@ -126,3 +126,50 @@ const observer = new IntersectionObserver(observerCallback, options);
 animationImages.forEach((image) => {
   observer.observe(image);
 });
+
+/**------------------------------
+ * アコーディオンメニュー
+--------------------------------- */
+// 必要な要素の取得
+const queries = <NodeListOf<HTMLElement>>(
+  document.querySelectorAll(".question__QA--query")
+);
+
+const answers = <NodeListOf<HTMLElement>>(
+  document.querySelectorAll(".question__QA--answer")
+);
+
+const answersMain = <NodeListOf<HTMLParagraphElement>>(
+  document.querySelectorAll(".question__answer--main")
+);
+
+// アコーディオンメニューの開閉プログラム
+const accodion = (index: number) => {
+  queries[index].classList.toggle("active");
+
+  const answer = answers[index];
+  answer.classList.toggle("active");
+
+  if (answer.classList.contains("active")) {
+    answer.style.height = `${answer.scrollHeight / 16}rem`;
+  } else {
+    answer.style.height = `0`;
+  }
+};
+
+// 各要素（index）へaccodionを適用
+queries.forEach((query, index) =>
+  query.addEventListener("click", () => accodion(index))
+);
+
+// 要素の高さを子要素の高さに合わせて再計算するコールバック関数
+const resizeAccodion = (answer: HTMLElement, index: number) => {
+  if (!answer.classList.contains("active")) return;
+  const resizeHeight = answersMain[index].clientHeight;
+  answer.style.height = `${resizeHeight / 16}rem`;
+};
+
+// 画面リサイズに対してresizeAccodionを各要素へ適用
+window.addEventListener("resize", () => {
+  answers.forEach((answer, index) => resizeAccodion(answer, index));
+});

@@ -3,11 +3,196 @@
 // セクションタイトル
 .question {
   padding-top: rem(73);
+  padding-bottom: rem(79);
+
+  @include mq(pc) {
+    padding-top: rem(102);
+    padding-bottom: rem(97);
+  }
+
   &__title::before {
     left: rem(72);
+
+    @include mq(pc) {
+      top: rem(70);
+      left: rem(108);
+    }
   }
 
   &__container {
-    margin-top: 100px;
+    margin-top: rem(42);
+
+    @include mq(pc) {
+      margin-top: rem(57);
+    }
+  }
+
+  // 各パネル
+  &__panel {
+    width: min(per(358, 390), rem(900));
+    margin: 0 auto;
+    border-radius: rem(8);
+    border: solid 1px #f26618;
+
+    overflow: hidden;
+    transition: all 0.6s;
+
+    & + .question__panel {
+      margin-top: rem(20);
+    }
+  }
+
+  // QAのスタイリング
+  &__QA--query {
+    padding-top: rem(16);
+    padding-bottom: rem(19);
+    display: flex;
+    position: relative;
+
+    cursor: pointer;
+
+    @include mq(pc) {
+      padding-bottom: rem(23);
+    }
+  }
+
+  &__text {
+    // クエスチョン
+    &--before {
+      display: block;
+      width: rem(32);
+      height: rem(32);
+      color: #f26618;
+      background-color: #ffeee5;
+      margin-left: rem(16);
+      border-radius: 50%;
+      font-family: "Poppins";
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include mq(pc) {
+        width: rem(48);
+        height: rem(48);
+        font-size: rem(24);
+        margin-left: rem(24);
+      }
+    }
+
+    &--main {
+      width: per(259, 358);
+      margin-left: rem(11);
+      line-height: 1.75;
+
+      @include mq(pc) {
+        width: per(690, 900);
+        margin-left: rem(15);
+        margin-top: rem(11);
+      }
+    }
+
+    &--after {
+      @include mq(pc) {
+        margin-left: auto;
+      }
+
+      &::after {
+        display: block;
+        content: "\F235";
+        font-family: "bootstrap-icons";
+        display: inline-block;
+        color: #f2a118;
+        width: max-content;
+        margin-left: rem(9);
+        transform: rotate(180deg);
+        transform-origin: center center;
+
+        @include mq(pc) {
+          font-size: 24px;
+          margin-top: rem(15);
+          margin-right: rem(22);
+        }
+      }
+    }
+  }
+  // アンサー
+  &__QA--answer {
+    display: flex;
+    background-color: #ffeee5;
+    transition: all 0.6s;
+
+    // アニメーションによる操作対象
+    height: 0;
+    transform-origin: center top;
+
+    & .question__answer--main {
+      padding-top: rem(16);
+      width: per(259, 358);
+      margin-left: rem(10);
+      line-height: 1.75;
+      display: flex;
+      padding-bottom: rem(18);
+      height: max-content;
+
+      @include mq(pc) {
+        margin-top: rem(12);
+        margin-left: rem(15);
+        width: per(740, 900);
+        padding-bottom: rem(31);
+      }
+    }
+
+    & .question__answer--before {
+      margin-top: rem(16);
+      margin-left: rem(16);
+
+      width: rem(32);
+      height: rem(32);
+      border-radius: 50%;
+      background-color: #f26618;
+      font-family: "Poppins";
+      font-weight: bold;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+
+      @include mq(pc) {
+        width: rem(48);
+        height: rem(48);
+        margin-left: rem(24);
+        font-size: rem(24);
+        margin-top: rem(20);
+      }
+    }
+  }
+}
+
+// アニメーション
+.question__QA--query.active {
+  & .question__text--after::after {
+    transform: none;
+  }
+}
+
+// 一つだけおかしいデザイン
+@include mq(sp) {
+  .question__panel:nth-child(4) .question__QA--answer .question__answer--main {
+    width: 71% !important;
+  }
+}
+
+// フリートライアル
+.freetrial__text--question {
+  & .freetrial__text--second {
+    @include mq(pc) {
+      margin-left: rem(-3);
+    }
+  }
+
+  @include mq(sp) {
+    margin-left: 0;
   }
 }
