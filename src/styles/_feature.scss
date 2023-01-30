@@ -391,12 +391,12 @@ div[class^="feature__point"]:nth-child(2n) .feature__img {
 
 @include mq(sp) {
   div[class^="feature__point"]:nth-child(2n + 1) .feature__img {
-    transform: translateX(100px);
+    transform: translateX(-100px);
     opacity: 0;
     transition: all 0.6s ease-out;
   }
   div[class^="feature__point"]:nth-child(2n) .feature__img {
-    transform: translateX(-100px);
+    transform: translateX(100px);
     opacity: 0;
     transition: all 0.6s ease-out;
   }

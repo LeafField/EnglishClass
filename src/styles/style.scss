@@ -65,6 +65,7 @@ body {
   @include mq(pc2) {
     height: rem(80);
     border-radius: rem(40);
+    margin-top: rem(16);
   }
 
   & a {
@@ -244,6 +245,11 @@ body {
   & li a {
     font-size: rem(32);
     color: #fff;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.502;
+    }
   }
 
   @include mq(pc2) {

@@ -35,6 +35,10 @@
     & li a {
       color: #fff;
       font-size: 2rem;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.502;
+      }
     }
   }
 
